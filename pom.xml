@@ -172,6 +172,11 @@
         <version>${google.common-protos.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>${google.core.version}</version>
+      </dependency>
+      <dependency>
         <groupId>org.threeten</groupId>
         <artifactId>threetenbp</artifactId>
         <version>${threeten.version}</version>
@@ -191,6 +196,12 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-storage</artifactId>
+        <version>1.102.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
