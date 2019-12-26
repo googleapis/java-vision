@@ -218,15 +218,8 @@ public class ITSystemTest {
 
   @Test
   public void detectFacesTest() throws IOException {
-    ByteString imgBytes =
-        ByteString.readFrom(new FileInputStream(RESOURCES + "face_no_surprise.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.FACE_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("face_no_surprise.jpg", Type.FACE_DETECTION, false);
     for (AnnotateImageResponse res : responses) {
       for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
         assertEquals(Likelihood.POSSIBLE, annotation.getAngerLikelihood());
@@ -237,18 +230,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectFacesGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder()
-            .setGcsImageUri(SAMPLE_BUCKET + "face/face_no_surprise.jpg")
-            .build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.FACE_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectFacesGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
     for (AnnotateImageResponse res : responses) {
       for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
         assertEquals(Likelihood.POSSIBLE, annotation.getAngerLikelihood());
@@ -260,14 +244,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLabelsTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "wakeupcat.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("wakeupcat.jpg", Type.LABEL_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
@@ -278,16 +256,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectLabelsGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "label/wakeupcat.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectLabelsGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("label/wakeupcat.jpg", Type.LABEL_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getLabelAnnotationsList()) {
@@ -299,14 +270,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLandmarksTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "landmark.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.LANDMARK_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark.jpg", Type.LANDMARK_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
@@ -337,16 +302,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectLandmarksGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.LANDMARK_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectLandmarksGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark/pofa.jpg", Type.LANDMARK_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getLandmarkAnnotationsList()) {
@@ -358,14 +316,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLogosTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "logos.png"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.LOGO_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("logos.png", Type.LOGO_DETECTION, false);
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getLogoAnnotationsList()) {
         assertEquals("Google", annotation.getDescription());
@@ -374,16 +326,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectLogosGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "logo/logo_google.png").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.LOGO_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectLogosGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("logo/logo_google.png", Type.LOGO_DETECTION, true);
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getLogoAnnotationsList()) {
         assertEquals("Google", annotation.getDescription());
@@ -393,14 +338,8 @@ public class ITSystemTest {
 
   @Test
   public void detectTextTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "text.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.TEXT_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("text.jpg", Type.TEXT_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
@@ -411,16 +350,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectTextGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "text/screen.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.TEXT_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectTextGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("text/screen.jpg", Type.TEXT_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
@@ -432,14 +364,8 @@ public class ITSystemTest {
 
   @Test
   public void detectPropertiesTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "landmark.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.IMAGE_PROPERTIES).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark.jpg", Type.IMAGE_PROPERTIES, false);
     List<Float> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
@@ -451,16 +377,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectPropertiesGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.IMAGE_PROPERTIES).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectPropertiesGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark/pofa.jpg", Type.IMAGE_PROPERTIES, true);
     List<Float> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
@@ -473,14 +392,8 @@ public class ITSystemTest {
 
   @Test
   public void detectSafeSearchTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "wakeupcat.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.SAFE_SEARCH_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, false);
     for (AnnotateImageResponse res : responses) {
       SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
@@ -489,16 +402,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectSafeSearchGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "label/wakeupcat.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.SAFE_SEARCH_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectSafeSearchGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("label/wakeupcat.jpg", Type.SAFE_SEARCH_DETECTION, true);
     for (AnnotateImageResponse res : responses) {
       SafeSearchAnnotation annotation = res.getSafeSearchAnnotation();
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getAdult());
@@ -508,14 +414,8 @@ public class ITSystemTest {
 
   @Test
   public void detectWebDetectionsTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "landmark.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark.jpg", Type.WEB_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       WebDetection annotation = res.getWebDetection();
@@ -527,16 +427,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectWebDetectionsGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectWebDetectionsGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark/pofa.jpg", Type.WEB_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       WebDetection annotation = res.getWebDetection();
@@ -549,14 +442,7 @@ public class ITSystemTest {
 
   @Test
   public void detectWebEntitiesTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "city.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses = getResponsesList("city.jpg", Type.WEB_DETECTION, false);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse imgResponse : responses) {
       for (WebDetection.WebEntity entity : imgResponse.getWebDetection().getWebEntitiesList()) {
@@ -567,16 +453,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectWebEntitiesGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectWebEntitiesGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("landmark/pofa.jpg", Type.WEB_DETECTION, true);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse imgResponse : responses) {
       for (WebDetection.WebEntity entity : imgResponse.getWebDetection().getWebEntitiesList()) {
@@ -643,14 +522,8 @@ public class ITSystemTest {
 
   @Test
   public void detectCropHintsTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "wakeupcat.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.CROP_HINTS).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("wakeupcat.jpg", Type.CROP_HINTS, false);
     List<Integer> actual = new ArrayList<>();
     for (AnnotateImageResponse imgResponse : responses) {
       CropHintsAnnotation annotation = imgResponse.getCropHintsAnnotation();
@@ -664,16 +537,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectCropHintsGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "label/wakeupcat.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.CROP_HINTS).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectCropHintsGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("label/wakeupcat.jpg", Type.CROP_HINTS, true);
     List<Integer> actual = new ArrayList<>();
     for (AnnotateImageResponse imgResponse : responses) {
       CropHintsAnnotation annotation = imgResponse.getCropHintsAnnotation();
@@ -688,14 +554,8 @@ public class ITSystemTest {
 
   @Test
   public void detectDocumentTextTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "text.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("text.jpg", Type.DOCUMENT_TEXT_DETECTION, false);
     String actual = "";
     for (AnnotateImageResponse imgResponse : responses) {
       TextAnnotation annotation = imgResponse.getFullTextAnnotation();
@@ -705,16 +565,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectDocumentTextGcs() {
-    ImageSource imgSource =
-        ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "text/screen.jpg").build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectDocumentTextGcs() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("text/screen.jpg", Type.DOCUMENT_TEXT_DETECTION, true);
     String actual = "";
     for (AnnotateImageResponse imgResponse : responses) {
       TextAnnotation annotation = imgResponse.getFullTextAnnotation();
@@ -729,10 +582,7 @@ public class ITSystemTest {
     GcsSource gcsSource =
         GcsSource.newBuilder().setUri(SAMPLE_BUCKET + "document/custom_0773375000.pdf").build();
     InputConfig inputConfig =
-        InputConfig.newBuilder()
-            .setMimeType("application/pdf") // Supported MimeTypes: "application/pdf", "image/tiff"
-            .setGcsSource(gcsSource)
-            .build();
+        InputConfig.newBuilder().setMimeType("application/pdf").setGcsSource(gcsSource).build();
     GcsDestination gcsDestination = GcsDestination.newBuilder().setUri(gcsDestinationPath).build();
     OutputConfig outputConfig =
         OutputConfig.newBuilder().setBatchSize(2).setGcsDestination(gcsDestination).build();
@@ -785,14 +635,8 @@ public class ITSystemTest {
 
   @Test
   public void detectLocalizedObjectsTest() throws IOException {
-    ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + "puppies.jpg"));
-    Image img = Image.newBuilder().setContent(imgBytes).build();
-    Feature feat = Feature.newBuilder().setType(Type.OBJECT_LOCALIZATION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+    List<AnnotateImageResponse> responses =
+        getResponsesList("puppies.jpg", Type.OBJECT_LOCALIZATION, false);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (LocalizedObjectAnnotation entity : res.getLocalizedObjectAnnotationsList()) {
@@ -803,18 +647,9 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectLocalizedObjectsGcsTest() {
-    ImageSource imgSource =
-        ImageSource.newBuilder()
-            .setGcsImageUri(SAMPLE_BUCKET + "object_localization/puppies.jpg")
-            .build();
-    Image img = Image.newBuilder().setSource(imgSource).build();
-    Feature feat = Feature.newBuilder().setType(Type.OBJECT_LOCALIZATION).build();
-    AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
-    BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
-    List<AnnotateImageResponse> responses = response.getResponsesList();
+  public void detectLocalizedObjectsGcsTest() throws IOException {
+    List<AnnotateImageResponse> responses =
+        getResponsesList("object_localization/puppies.jpg", Type.OBJECT_LOCALIZATION, true);
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
       for (LocalizedObjectAnnotation entity : res.getLocalizedObjectAnnotationsList()) {
@@ -911,5 +746,24 @@ public class ITSystemTest {
 
   private static String getName(String name) {
     return name.substring(name.lastIndexOf("/")).replace("/", "");
+  }
+
+  private static List<AnnotateImageResponse> getResponsesList(
+      String image, Type type, boolean isGcs) throws IOException {
+    ImageSource imgSource;
+    Image img;
+    if (isGcs) {
+      imgSource = ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + image).build();
+      img = Image.newBuilder().setSource(imgSource).build();
+    } else {
+      ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + image));
+      img = Image.newBuilder().setContent(imgBytes).build();
+    }
+    Feature feat = Feature.newBuilder().setType(type).build();
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
+    BatchAnnotateImagesResponse response =
+        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
+    return response.getResponsesList();
   }
 }
