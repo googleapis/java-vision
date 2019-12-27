@@ -91,11 +91,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-vision-v1p3beta1</artifactId>
       <scope>test</scope>
