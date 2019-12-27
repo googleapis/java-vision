@@ -19,19 +19,10 @@ import static com.google.cloud.vision.v1.Feature.Type;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.vision.v1.AddProductToProductSetRequest;
-import com.google.cloud.vision.v1.AnnotateFileResponse;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
-import com.google.cloud.vision.v1.AsyncAnnotateFileRequest;
-import com.google.cloud.vision.v1.AsyncAnnotateFileResponse;
-import com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.ColorInfo;
 import com.google.cloud.vision.v1.CreateProductRequest;
@@ -46,8 +37,6 @@ import com.google.cloud.vision.v1.DominantColorsAnnotation;
 import com.google.cloud.vision.v1.EntityAnnotation;
 import com.google.cloud.vision.v1.FaceAnnotation;
 import com.google.cloud.vision.v1.Feature;
-import com.google.cloud.vision.v1.GcsDestination;
-import com.google.cloud.vision.v1.GcsSource;
 import com.google.cloud.vision.v1.GetProductRequest;
 import com.google.cloud.vision.v1.GetProductSetRequest;
 import com.google.cloud.vision.v1.GetReferenceImageRequest;
@@ -55,7 +44,6 @@ import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.ImageContext;
 import com.google.cloud.vision.v1.ImageSource;
-import com.google.cloud.vision.v1.InputConfig;
 import com.google.cloud.vision.v1.Likelihood;
 import com.google.cloud.vision.v1.ListProductSetsRequest;
 import com.google.cloud.vision.v1.ListProductsInProductSetRequest;
@@ -63,8 +51,6 @@ import com.google.cloud.vision.v1.ListProductsRequest;
 import com.google.cloud.vision.v1.ListReferenceImagesRequest;
 import com.google.cloud.vision.v1.LocalizedObjectAnnotation;
 import com.google.cloud.vision.v1.LocationName;
-import com.google.cloud.vision.v1.OperationMetadata;
-import com.google.cloud.vision.v1.OutputConfig;
 import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
@@ -81,16 +67,12 @@ import com.google.cloud.vision.v1.WebDetection;
 import com.google.cloud.vision.v1.WebDetectionParams;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.util.JsonFormat;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -110,7 +92,6 @@ public class ITSystemTest {
   private static String formatReferenceImageName;
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
-  private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT_" + ID;
   private static final String RESOURCES = "src/test/resources/";
   private static final String SAMPLE_BUCKET = "gs://cloud-samples-data/vision/";
   private static final String SAMPLE_URI =
@@ -574,63 +555,6 @@ public class ITSystemTest {
       actual = annotation.getText();
     }
     assertTrue(actual.contains("After preparation is complete"));
-  }
-
-  @Test
-  public void detectDocumentsGcsTest() throws Exception {
-    String gcsDestinationPath = "gs://" + PROJECT_ID + "/" + OUTPUT_PREFIX + "/";
-    GcsSource gcsSource =
-        GcsSource.newBuilder().setUri(SAMPLE_BUCKET + "document/custom_0773375000.pdf").build();
-    InputConfig inputConfig =
-        InputConfig.newBuilder().setMimeType("application/pdf").setGcsSource(gcsSource).build();
-    GcsDestination gcsDestination = GcsDestination.newBuilder().setUri(gcsDestinationPath).build();
-    OutputConfig outputConfig =
-        OutputConfig.newBuilder().setBatchSize(2).setGcsDestination(gcsDestination).build();
-    Feature feat = Feature.newBuilder().setType(Type.DOCUMENT_TEXT_DETECTION).build();
-    AsyncAnnotateFileRequest request =
-        AsyncAnnotateFileRequest.newBuilder()
-            .addFeatures(feat)
-            .setInputConfig(inputConfig)
-            .setOutputConfig(outputConfig)
-            .build();
-    OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata> response =
-        imageAnnotatorClient.asyncBatchAnnotateFilesAsync(
-            ImmutableList.<AsyncAnnotateFileRequest>of(request));
-    List<AsyncAnnotateFileResponse> result = response.get(180, TimeUnit.SECONDS).getResponsesList();
-    Storage storage = StorageOptions.getDefaultInstance().getService();
-    Pattern pattern = Pattern.compile("gs://([^/]+)/(.+)");
-    Matcher matcher = pattern.matcher(gcsDestinationPath);
-    if (matcher.find()) {
-      String bucketName = matcher.group(1);
-      String prefix = matcher.group(2);
-      Bucket bucket = storage.get(bucketName);
-      com.google.api.gax.paging.Page<Blob> pageList =
-          bucket.list(Storage.BlobListOption.prefix(prefix));
-      Blob firstOutputFile = null;
-      for (Blob blob : pageList.iterateAll()) {
-        if (firstOutputFile == null) {
-          firstOutputFile = blob;
-        }
-      }
-      String jsonContents = new String(firstOutputFile.getContent());
-      AnnotateFileResponse.Builder builder = AnnotateFileResponse.newBuilder();
-      JsonFormat.parser().merge(jsonContents, builder);
-      AnnotateFileResponse annotateFileResponse = builder.build();
-      AnnotateImageResponse annotateImageResponse = annotateFileResponse.getResponses(0);
-      assertTrue(
-          annotateImageResponse
-              .getFullTextAnnotation()
-              .getText()
-              .contains("OIL, GAS AND MINERAL LEASE"));
-      com.google.api.gax.paging.Page<Blob> blobs =
-          storage.list(
-              PROJECT_ID,
-              Storage.BlobListOption.currentDirectory(),
-              Storage.BlobListOption.prefix(OUTPUT_PREFIX + "/"));
-      for (Blob blob : blobs.iterateAll()) {
-        blob.delete();
-      }
-    }
   }
 
   @Test
