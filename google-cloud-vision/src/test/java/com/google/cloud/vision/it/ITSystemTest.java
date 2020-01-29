@@ -105,7 +105,6 @@ public class ITSystemTest {
     }
     SAMPLE_BUCKET = String.format("gs://%s/vision/", GCS_BUCKET);
     SAMPLE_URI = String.format("https://storage-download.googleapis.com/%s/vision/", GCS_BUCKET);
-
   }
   private static final String COMPUTE_REGION = "us-west1";
   private static final String LOCATION_NAME =
