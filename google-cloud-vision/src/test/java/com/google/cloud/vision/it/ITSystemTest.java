@@ -123,6 +123,7 @@ public class ITSystemTest {
   public static void setUp() throws IOException {
 
     imageAnnotatorClient = ImageAnnotatorClient.create();
+    /* get GCS location */
 
     /* create product */
     productSearchClient = ProductSearchClient.create();
