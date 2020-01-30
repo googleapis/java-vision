@@ -96,6 +96,7 @@ public class ITSystemTest {
   private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_VISION_BUCKET";
   private static final String SAMPLE_BUCKET;
   private static final String SAMPLE_URI;
+
   static {
     String GCS_BUCKET;
     if (System.getenv(GCS_BUCKET_ENV_VAR) != null) {
@@ -106,6 +107,7 @@ public class ITSystemTest {
     SAMPLE_BUCKET = String.format("gs://%s/vision/", GCS_BUCKET);
     SAMPLE_URI = String.format("https://storage-download.googleapis.com/%s/vision/", GCS_BUCKET);
   }
+
   private static final String COMPUTE_REGION = "us-west1";
   private static final String LOCATION_NAME =
       LocationName.of(PROJECT_ID, COMPUTE_REGION).toString();
