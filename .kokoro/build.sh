@@ -37,9 +37,13 @@ if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTI
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
 
+set +e
+RETURN_CODE=0
+
 case ${JOB_TYPE} in
 test)
     mvn test -B -Dclirr.skip=true -Denforcer.skip=true
+    RETURN_CODE=$?
     bash ${KOKORO_GFILE_DIR}/codecov.sh
     bash .kokoro/coerce_logs.sh
     ;;
@@ -50,6 +54,7 @@ lint)
     ;;
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
+    RETURN_CODE=$?
     ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
@@ -59,6 +64,8 @@ integration)
       -Denforcer.skip=true \
       -fae \
       verify
+    RETURN_CODE=$?
+
     bash .kokoro/coerce_logs.sh
 
     # send results to buildcop
@@ -73,6 +80,7 @@ samples)
       -Denforcer.skip=true \
       -fae \
       verify
+    RETURN_CODE=$?
     bash .kokoro/coerce_logs.sh
 
     # send results to buildcop
@@ -81,7 +89,11 @@ samples)
     ;;
 clirr)
     mvn -B -Denforcer.skip=true clirr:check
+    RETURN_CODE=$?
     ;;
 *)
     ;;
 esac
+
+echo "exiting with ${RETURN_CODE}"
+exit ${RETURN_CODE}
