@@ -60,6 +60,10 @@ integration)
       -fae \
       verify
     bash .kokoro/coerce_logs.sh
+
+    # send results to buildcop
+    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
+    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
     ;;
 samples)
     mvn -B \
@@ -70,6 +74,10 @@ samples)
       -fae \
       verify
     bash .kokoro/coerce_logs.sh
+
+    # send results to buildcop
+    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
+    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
     ;;
 clirr)
     mvn -B -Denforcer.skip=true clirr:check
