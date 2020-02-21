@@ -70,7 +70,7 @@ integration)
 
     # send results to buildcop
     chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
-    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
+    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop -repo=googleapis/java-vision
     ;;
 samples)
     mvn -B \
@@ -85,7 +85,7 @@ samples)
 
     # send results to buildcop
     chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
-    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
+    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop -repo=googleapis/java-vision
     ;;
 clirr)
     mvn -B -Denforcer.skip=true clirr:check
