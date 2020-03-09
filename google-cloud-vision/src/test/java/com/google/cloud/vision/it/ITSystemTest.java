@@ -216,7 +216,7 @@ public class ITSystemTest {
     for (AnnotateImageResponse res : responses) {
       for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
         assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
-        assertEquals(Likelihood.POSSIBLE, annotation.getJoyLikelihood());
+        assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
         assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
       }
     }
@@ -229,7 +229,7 @@ public class ITSystemTest {
     for (AnnotateImageResponse res : responses) {
       for (FaceAnnotation annotation : res.getFaceAnnotationsList()) {
         assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
-        assertEquals(Likelihood.POSSIBLE, annotation.getJoyLikelihood());
+        assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
         assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
       }
     }
