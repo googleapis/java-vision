@@ -1,5 +1,15 @@
 # Changelog
 
+### [1.99.4](https://www.github.com/googleapis/java-vision/compare/v1.99.3...v1.99.4) (2020-05-05)
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#132](https://www.github.com/googleapis/java-vision/issues/132)) ([0903c75](https://www.github.com/googleapis/java-vision/commit/0903c7592112ecc6f157c8871f9526e69b965242))
+* update dependency com.google.guava:guava-bom to v29 ([#109](https://www.github.com/googleapis/java-vision/issues/109)) ([02771ae](https://www.github.com/googleapis/java-vision/commit/02771aef6fe28fb190b2775fa4a8c4b6f3a69ae1))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#124](https://www.github.com/googleapis/java-vision/issues/124)) ([cc5a244](https://www.github.com/googleapis/java-vision/commit/cc5a2445a92ce3c1782b5ed2272dc9f91b980686))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#126](https://www.github.com/googleapis/java-vision/issues/126)) ([5207f4d](https://www.github.com/googleapis/java-vision/commit/5207f4dc9aba330dc4f3219655631994a31c663d))
+
 ### [1.99.3](https://www.github.com/googleapis/java-vision/compare/v1.99.2...v1.99.3) (2020-04-07)
 
 
