@@ -15,67 +15,25 @@
  */
 package com.google.cloud.vision.it;
 
-import static com.google.cloud.vision.v1.Feature.Type;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.vision.v1.AddProductToProductSetRequest;
-import com.google.cloud.vision.v1.AnnotateImageRequest;
-import com.google.cloud.vision.v1.AnnotateImageResponse;
-import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1.ColorInfo;
-import com.google.cloud.vision.v1.CreateProductRequest;
-import com.google.cloud.vision.v1.CreateProductSetRequest;
-import com.google.cloud.vision.v1.CreateReferenceImageRequest;
-import com.google.cloud.vision.v1.CropHint;
-import com.google.cloud.vision.v1.CropHintsAnnotation;
-import com.google.cloud.vision.v1.DeleteProductRequest;
-import com.google.cloud.vision.v1.DeleteProductSetRequest;
-import com.google.cloud.vision.v1.DeleteReferenceImageRequest;
-import com.google.cloud.vision.v1.DominantColorsAnnotation;
-import com.google.cloud.vision.v1.EntityAnnotation;
-import com.google.cloud.vision.v1.FaceAnnotation;
-import com.google.cloud.vision.v1.Feature;
-import com.google.cloud.vision.v1.GetProductRequest;
-import com.google.cloud.vision.v1.GetProductSetRequest;
-import com.google.cloud.vision.v1.GetReferenceImageRequest;
-import com.google.cloud.vision.v1.Image;
-import com.google.cloud.vision.v1.ImageAnnotatorClient;
-import com.google.cloud.vision.v1.ImageContext;
-import com.google.cloud.vision.v1.ImageSource;
-import com.google.cloud.vision.v1.Likelihood;
-import com.google.cloud.vision.v1.ListProductSetsRequest;
-import com.google.cloud.vision.v1.ListProductsInProductSetRequest;
-import com.google.cloud.vision.v1.ListProductsRequest;
-import com.google.cloud.vision.v1.ListReferenceImagesRequest;
-import com.google.cloud.vision.v1.LocalizedObjectAnnotation;
-import com.google.cloud.vision.v1.LocationName;
-import com.google.cloud.vision.v1.Product;
-import com.google.cloud.vision.v1.ProductName;
-import com.google.cloud.vision.v1.ProductSearchClient;
-import com.google.cloud.vision.v1.ProductSet;
-import com.google.cloud.vision.v1.ProductSetName;
-import com.google.cloud.vision.v1.ReferenceImage;
-import com.google.cloud.vision.v1.ReferenceImageName;
-import com.google.cloud.vision.v1.RemoveProductFromProductSetRequest;
-import com.google.cloud.vision.v1.SafeSearchAnnotation;
-import com.google.cloud.vision.v1.TextAnnotation;
-import com.google.cloud.vision.v1.UpdateProductRequest;
-import com.google.cloud.vision.v1.Vertex;
-import com.google.cloud.vision.v1.WebDetection;
-import com.google.cloud.vision.v1.WebDetectionParams;
+import com.google.cloud.vision.v1.*;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+import static com.google.cloud.vision.v1.Feature.Type;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ITSystemTest {
 
@@ -245,7 +203,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Whiskers"));
+    assertThat(actual).contains("Whiskers");
   }
 
   @Test
@@ -258,7 +216,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Whiskers"));
+    assertThat(actual).contains("Whiskers");
   }
 
   @Test
@@ -271,7 +229,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Palace of Fine Arts"));
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -281,9 +239,9 @@ public class ITSystemTest {
     Image img = Image.newBuilder().setSource(imgSource).build();
     Feature feat = Feature.newBuilder().setType(Type.LANDMARK_DETECTION).build();
     AnnotateImageRequest request =
-        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
+            AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     BatchAnnotateImagesResponse response =
-        imageAnnotatorClient.batchAnnotateImages(ImmutableList.<AnnotateImageRequest>of(request));
+            imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
     List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
@@ -291,7 +249,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Palace of Fine Arts"));
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -304,7 +262,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("Palace of Fine Arts"));
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -339,7 +297,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("37%"));
+    assertThat(actual).contains("37%");
   }
 
   @Test
@@ -352,7 +310,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertTrue(actual.contains("37%"));
+    assertThat(actual).contains("37%");
   }
 
   @Test
@@ -366,7 +324,7 @@ public class ITSystemTest {
         actual.add(color.getPixelFraction());
       }
     }
-    assertTrue(actual.contains((float) 0.14140345));
+    assertThat(actual).contains((float) 0.14140345);
   }
 
   @Test
@@ -380,7 +338,7 @@ public class ITSystemTest {
         actual.add(color.getPixelFraction());
       }
     }
-    assertTrue(actual.contains((float) 0.14140345));
+    assertThat(actual).contains((float) 0.14140345);
   }
 
   @Test
@@ -414,7 +372,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("Skyscraper"));
+    assertThat(actual).contains("Skyscraper");
   }
 
   @Test
@@ -427,7 +385,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("The Palace Of Fine Arts"));
+    assertThat(actual).contains("The Palace Of Fine Arts");
   }
 
   @Test
@@ -454,7 +412,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("Skyscraper"));
+    assertThat(actual).contains("Skyscraper");
   }
 
   @Test
@@ -482,7 +440,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertTrue(actual.contains("The Palace Of Fine Arts"));
+    assertThat(actual).contains("The Palace Of Fine Arts");
   }
 
   @Test
@@ -526,7 +484,7 @@ public class ITSystemTest {
       TextAnnotation annotation = imgResponse.getFullTextAnnotation();
       actual = annotation.getText();
     }
-    assertTrue(actual.contains("After preparation is complete"));
+    assertThat(actual).contains("After preparation is complete");
   }
 
   @Test
@@ -538,7 +496,7 @@ public class ITSystemTest {
       TextAnnotation annotation = imgResponse.getFullTextAnnotation();
       actual = annotation.getText();
     }
-    assertTrue(actual.contains("After preparation is complete"));
+    assertThat(actual).contains("After preparation is complete");
   }
 
   @Test
@@ -551,7 +509,7 @@ public class ITSystemTest {
         actual.add(entity.getName());
       }
     }
-    assertTrue(actual.contains("Dog"));
+    assertThat(actual).contains("Dog");
   }
 
   @Test
@@ -564,7 +522,7 @@ public class ITSystemTest {
         actual.add(entity.getName());
       }
     }
-    assertTrue(actual.contains("Dog"));
+    assertThat(actual).contains("Dog");
   }
 
   @Test
