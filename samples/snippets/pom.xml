@@ -30,7 +30,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>8.1.0</version>
+        <version>9.0.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -42,8 +42,21 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-vision</artifactId>
     </dependency>
-    <!-- [END vision_install_with_bom] -->
-
+    <!-- [START_EXCLUDE] -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.argparse4j</groupId>
+      <artifactId>argparse4j</artifactId>
+      <version>0.8.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>1.8</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -56,5 +69,7 @@
       <version>1.0.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- [END_EXCLUDE] -->
   </dependencies>
+  <!-- [END vision_install_with_bom] -->
 </project>
