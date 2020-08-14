@@ -15,25 +15,23 @@
  */
 package com.google.cloud.vision.it;
 
+import static com.google.cloud.vision.v1.Feature.Type;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.vision.v1.*;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-
-import static com.google.cloud.vision.v1.Feature.Type;
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITSystemTest {
 
@@ -239,9 +237,9 @@ public class ITSystemTest {
     Image img = Image.newBuilder().setSource(imgSource).build();
     Feature feat = Feature.newBuilder().setType(Type.LANDMARK_DETECTION).build();
     AnnotateImageRequest request =
-            AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
+        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     BatchAnnotateImagesResponse response =
-            imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
+        imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
     List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse res : responses) {
