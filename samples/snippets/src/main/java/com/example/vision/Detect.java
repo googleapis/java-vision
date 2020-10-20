@@ -126,6 +126,8 @@ public class Detect {
   }
   // [END vision_fulltext_detection]
 
+  public static foo() { System.out.println("testing"); }
+
   /**
    * Performs document text detection on a remote image on Google Cloud Storage.
    *
