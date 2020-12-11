@@ -22,15 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service that performs Google Cloud Vision API detection tasks over client
- * images, such as face, landmark, logo, label, and text detection. The
- * ImageAnnotator service returns detected entities from the images.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/vision/v1p1beta1/image_annotator.proto")
@@ -131,24 +123,10 @@ public final class ImageAnnotatorGrpc {
     return ImageAnnotatorFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that performs Google Cloud Vision API detection tasks over client
-   * images, such as face, landmark, logo, label, and text detection. The
-   * ImageAnnotator service returns detected entities from the images.
-   * </pre>
-   */
+  /** */
   public abstract static class ImageAnnotatorImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Run image detection and annotation for a batch of images.
-     * </pre>
-     */
+    /** */
     public void batchAnnotateImages(
         com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
@@ -170,15 +148,7 @@ public final class ImageAnnotatorGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that performs Google Cloud Vision API detection tasks over client
-   * images, such as face, landmark, logo, label, and text detection. The
-   * ImageAnnotator service returns detected entities from the images.
-   * </pre>
-   */
+  /** */
   public static final class ImageAnnotatorStub
       extends io.grpc.stub.AbstractAsyncStub<ImageAnnotatorStub> {
     private ImageAnnotatorStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -190,13 +160,7 @@ public final class ImageAnnotatorGrpc {
       return new ImageAnnotatorStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Run image detection and annotation for a batch of images.
-     * </pre>
-     */
+    /** */
     public void batchAnnotateImages(
         com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
@@ -208,15 +172,7 @@ public final class ImageAnnotatorGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that performs Google Cloud Vision API detection tasks over client
-   * images, such as face, landmark, logo, label, and text detection. The
-   * ImageAnnotator service returns detected entities from the images.
-   * </pre>
-   */
+  /** */
   public static final class ImageAnnotatorBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ImageAnnotatorBlockingStub> {
     private ImageAnnotatorBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -229,13 +185,7 @@ public final class ImageAnnotatorGrpc {
       return new ImageAnnotatorBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Run image detection and annotation for a batch of images.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse batchAnnotateImages(
         com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request) {
       return blockingUnaryCall(
@@ -243,15 +193,7 @@ public final class ImageAnnotatorGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that performs Google Cloud Vision API detection tasks over client
-   * images, such as face, landmark, logo, label, and text detection. The
-   * ImageAnnotator service returns detected entities from the images.
-   * </pre>
-   */
+  /** */
   public static final class ImageAnnotatorFutureStub
       extends io.grpc.stub.AbstractFutureStub<ImageAnnotatorFutureStub> {
     private ImageAnnotatorFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -264,13 +206,7 @@ public final class ImageAnnotatorGrpc {
       return new ImageAnnotatorFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Run image detection and annotation for a batch of images.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesResponse>
         batchAnnotateImages(com.google.cloud.vision.v1p1beta1.BatchAnnotateImagesRequest request) {
