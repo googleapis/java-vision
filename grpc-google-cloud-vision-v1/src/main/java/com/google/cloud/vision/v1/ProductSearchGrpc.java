@@ -22,22 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Manages Products and ProductSets of reference images for use in product
- * search. It uses the following resource model:
- * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
- * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
- * products into groups to limit identification.
- * In parallel,
- * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
- *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
- * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
- *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/vision/v1/product_search_service.proto")
@@ -939,50 +924,17 @@ public final class ProductSearchGrpc {
     return ProductSearchFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages Products and ProductSets of reference images for use in product
-   * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
-   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
-   * products into groups to limit identification.
-   * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
-   * </pre>
-   */
+  /** */
   public abstract static class ProductSearchImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ProductSet resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing, or is longer than
-     *   4096 characters.
-     * </pre>
-     */
+    /** */
     public void createProductSet(
         com.google.cloud.vision.v1.CreateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ProductSets in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public void listProductSets(
         com.google.cloud.vision.v1.ListProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductSetsResponse>
@@ -990,81 +942,35 @@ public final class ProductSearchGrpc {
       asyncUnimplementedUnaryCall(getListProductSetsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * </pre>
-     */
+    /** */
     public void getProductSet(
         com.google.cloud.vision.v1.GetProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
       asyncUnimplementedUnaryCall(getGetProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a ProductSet resource.
-     * Only display_name can be updated currently.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but
-     *   missing from the request or longer than 4096 characters.
-     * </pre>
-     */
+    /** */
     public void updateProductSet(
         com.google.cloud.vision.v1.UpdateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a ProductSet. Products and ReferenceImages in the
-     * ProductSet are not deleted.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public void deleteProductSet(
         com.google.cloud.vision.v1.DeleteProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new product resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is missing or invalid.
-     * </pre>
-     */
+    /** */
     public void createProduct(
         com.google.cloud.vision.v1.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateProductMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists products in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public void listProducts(
         com.google.cloud.vision.v1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductsResponse>
@@ -1072,116 +978,42 @@ public final class ProductSearchGrpc {
       asyncUnimplementedUnaryCall(getListProductsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a Product.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * </pre>
-     */
+    /** */
     public void getProduct(
         com.google.cloud.vision.v1.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
       asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a Product resource.
-     * Only the `display_name`, `description`, and `labels` fields can be updated
-     * right now.
-     * If labels are updated, the change will not be reflected in queries until
-     * the next index time.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but is
-     *   missing from the request or longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if description is present in update_mask but is
-     *   longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is present in update_mask.
-     * </pre>
-     */
+    /** */
     public void updateProduct(
         com.google.cloud.vision.v1.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateProductMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a product and its reference images.
-     * Metadata of the product and all its images will be deleted right away, but
-     * search queries against ProductSets containing the product may still work
-     * until all related caches are refreshed.
-     * </pre>
-     */
+    /** */
     public void deleteProduct(
         com.google.cloud.vision.v1.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteProductMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ReferenceImage resource.
-     * The `bounding_poly` field is optional. If `bounding_poly` is not specified,
-     * the system will try to detect regions of interest in the image that are
-     * compatible with the product_category on the parent product. If it is
-     * specified, detection is ALWAYS skipped. The system converts polygons into
-     * non-rotated rectangles.
-     * Note that the pipeline will resize the image if the image resolution is too
-     * large to process (above 50MP).
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if the product does not exist.
-     * * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-     *   compatible with the parent product's product_category is detected.
-     * * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
-     * </pre>
-     */
+    /** */
     public void createReferenceImage(
         com.google.cloud.vision.v1.CreateReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ReferenceImage> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateReferenceImageMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a reference image.
-     * The image metadata will be deleted right away, but search queries
-     * against ProductSets containing the image may still work until all related
-     * caches are refreshed.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public void deleteReferenceImage(
         com.google.cloud.vision.v1.DeleteReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteReferenceImageMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists reference images.
-     * Possible errors:
-     * * Returns NOT_FOUND if the parent product does not exist.
-     * * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public void listReferenceImages(
         com.google.cloud.vision.v1.ListReferenceImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListReferenceImagesResponse>
@@ -1189,62 +1021,28 @@ public final class ProductSearchGrpc {
       asyncUnimplementedUnaryCall(getListReferenceImagesMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ReferenceImage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the specified image does not exist.
-     * </pre>
-     */
+    /** */
     public void getReferenceImage(
         com.google.cloud.vision.v1.GetReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ReferenceImage> responseObserver) {
       asyncUnimplementedUnaryCall(getGetReferenceImageMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Adds a Product to the specified ProductSet. If the Product is already
-     * present, no change is made.
-     * One Product can be added to at most 100 ProductSets.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-     * </pre>
-     */
+    /** */
     public void addProductToProductSet(
         com.google.cloud.vision.v1.AddProductToProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getAddProductToProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Removes a Product from the specified ProductSet.
-     * </pre>
-     */
+    /** */
     public void removeProductFromProductSet(
         com.google.cloud.vision.v1.RemoveProductFromProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getRemoveProductFromProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists the Products in a ProductSet, in an unspecified order. If the
-     * ProductSet does not exist, the products field of the response will be
-     * empty.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public void listProductsInProductSet(
         com.google.cloud.vision.v1.ListProductsInProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductsInProductSetResponse>
@@ -1252,52 +1050,14 @@ public final class ProductSearchGrpc {
       asyncUnimplementedUnaryCall(getListProductsInProductSetMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API that imports a list of reference images to specified
-     * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * `Operation.response` contains `ImportProductSetsResponse`. (results)
-     * The input source of this method is a csv file on Google Cloud Storage.
-     * For the format of the csv file please see
-     * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].
-     * </pre>
-     */
+    /** */
     public void importProductSets(
         com.google.cloud.vision.v1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getImportProductSetsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API to delete all Products in a ProductSet or all Products
-     * that are in no ProductSet.
-     * If a Product is a member of the specified ProductSet in addition to other
-     * ProductSets, the Product will still be deleted.
-     * It is recommended to not delete the specified ProductSet until after this
-     * operation has completed. It is also recommended to not add any of the
-     * Products involved in the batch delete to a new ProductSet while this
-     * operation is running because those Products may still end up deleted.
-     * It's not possible to undo the PurgeProducts operation. Therefore, it is
-     * recommended to keep the csv files used in ImportProductSets (if that was
-     * how you originally built the Product Set) before starting PurgeProducts, in
-     * case you need to re-import the data after deletion.
-     * If the plan is to purge all of the Products from a ProductSet and then
-     * re-use the empty ProductSet to re-import new Products into the empty
-     * ProductSet, you must wait until the PurgeProducts operation has finished
-     * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * </pre>
-     */
+    /** */
     public void purgeProducts(
         com.google.cloud.vision.v1.PurgeProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1431,22 +1191,7 @@ public final class ProductSearchGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages Products and ProductSets of reference images for use in product
-   * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
-   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
-   * products into groups to limit identification.
-   * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
-   * </pre>
-   */
+  /** */
   public static final class ProductSearchStub
       extends io.grpc.stub.AbstractAsyncStub<ProductSearchStub> {
     private ProductSearchStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1458,16 +1203,7 @@ public final class ProductSearchGrpc {
       return new ProductSearchStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ProductSet resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing, or is longer than
-     *   4096 characters.
-     * </pre>
-     */
+    /** */
     public void createProductSet(
         com.google.cloud.vision.v1.CreateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
@@ -1477,16 +1213,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ProductSets in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public void listProductSets(
         com.google.cloud.vision.v1.ListProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductSetsResponse>
@@ -1497,15 +1224,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * </pre>
-     */
+    /** */
     public void getProductSet(
         com.google.cloud.vision.v1.GetProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
@@ -1515,18 +1234,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a ProductSet resource.
-     * Only display_name can be updated currently.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but
-     *   missing from the request or longer than 4096 characters.
-     * </pre>
-     */
+    /** */
     public void updateProductSet(
         com.google.cloud.vision.v1.UpdateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
@@ -1536,15 +1244,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a ProductSet. Products and ReferenceImages in the
-     * ProductSet are not deleted.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public void deleteProductSet(
         com.google.cloud.vision.v1.DeleteProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1554,18 +1254,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new product resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is missing or invalid.
-     * </pre>
-     */
+    /** */
     public void createProduct(
         com.google.cloud.vision.v1.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
@@ -1575,15 +1264,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists products in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public void listProducts(
         com.google.cloud.vision.v1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductsResponse>
@@ -1594,15 +1275,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a Product.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * </pre>
-     */
+    /** */
     public void getProduct(
         com.google.cloud.vision.v1.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
@@ -1610,24 +1283,7 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getGetProductMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a Product resource.
-     * Only the `display_name`, `description`, and `labels` fields can be updated
-     * right now.
-     * If labels are updated, the change will not be reflected in queries until
-     * the next index time.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but is
-     *   missing from the request or longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if description is present in update_mask but is
-     *   longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is present in update_mask.
-     * </pre>
-     */
+    /** */
     public void updateProduct(
         com.google.cloud.vision.v1.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
@@ -1637,16 +1293,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a product and its reference images.
-     * Metadata of the product and all its images will be deleted right away, but
-     * search queries against ProductSets containing the product may still work
-     * until all related caches are refreshed.
-     * </pre>
-     */
+    /** */
     public void deleteProduct(
         com.google.cloud.vision.v1.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1656,27 +1303,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ReferenceImage resource.
-     * The `bounding_poly` field is optional. If `bounding_poly` is not specified,
-     * the system will try to detect regions of interest in the image that are
-     * compatible with the product_category on the parent product. If it is
-     * specified, detection is ALWAYS skipped. The system converts polygons into
-     * non-rotated rectangles.
-     * Note that the pipeline will resize the image if the image resolution is too
-     * large to process (above 50MP).
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if the product does not exist.
-     * * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-     *   compatible with the parent product's product_category is detected.
-     * * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
-     * </pre>
-     */
+    /** */
     public void createReferenceImage(
         com.google.cloud.vision.v1.CreateReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ReferenceImage> responseObserver) {
@@ -1686,17 +1313,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a reference image.
-     * The image metadata will be deleted right away, but search queries
-     * against ProductSets containing the image may still work until all related
-     * caches are refreshed.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public void deleteReferenceImage(
         com.google.cloud.vision.v1.DeleteReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1706,17 +1323,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists reference images.
-     * Possible errors:
-     * * Returns NOT_FOUND if the parent product does not exist.
-     * * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public void listReferenceImages(
         com.google.cloud.vision.v1.ListReferenceImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListReferenceImagesResponse>
@@ -1727,15 +1334,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ReferenceImage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the specified image does not exist.
-     * </pre>
-     */
+    /** */
     public void getReferenceImage(
         com.google.cloud.vision.v1.GetReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ReferenceImage> responseObserver) {
@@ -1745,17 +1344,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Adds a Product to the specified ProductSet. If the Product is already
-     * present, no change is made.
-     * One Product can be added to at most 100 ProductSets.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-     * </pre>
-     */
+    /** */
     public void addProductToProductSet(
         com.google.cloud.vision.v1.AddProductToProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1765,13 +1354,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Removes a Product from the specified ProductSet.
-     * </pre>
-     */
+    /** */
     public void removeProductFromProductSet(
         com.google.cloud.vision.v1.RemoveProductFromProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1781,17 +1364,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists the Products in a ProductSet, in an unspecified order. If the
-     * ProductSet does not exist, the products field of the response will be
-     * empty.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public void listProductsInProductSet(
         com.google.cloud.vision.v1.ListProductsInProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductsInProductSetResponse>
@@ -1802,21 +1375,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API that imports a list of reference images to specified
-     * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * `Operation.response` contains `ImportProductSetsResponse`. (results)
-     * The input source of this method is a csv file on Google Cloud Storage.
-     * For the format of the csv file please see
-     * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].
-     * </pre>
-     */
+    /** */
     public void importProductSets(
         com.google.cloud.vision.v1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1826,31 +1385,7 @@ public final class ProductSearchGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API to delete all Products in a ProductSet or all Products
-     * that are in no ProductSet.
-     * If a Product is a member of the specified ProductSet in addition to other
-     * ProductSets, the Product will still be deleted.
-     * It is recommended to not delete the specified ProductSet until after this
-     * operation has completed. It is also recommended to not add any of the
-     * Products involved in the batch delete to a new ProductSet while this
-     * operation is running because those Products may still end up deleted.
-     * It's not possible to undo the PurgeProducts operation. Therefore, it is
-     * recommended to keep the csv files used in ImportProductSets (if that was
-     * how you originally built the Product Set) before starting PurgeProducts, in
-     * case you need to re-import the data after deletion.
-     * If the plan is to purge all of the Products from a ProductSet and then
-     * re-use the empty ProductSet to re-import new Products into the empty
-     * ProductSet, you must wait until the PurgeProducts operation has finished
-     * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * </pre>
-     */
+    /** */
     public void purgeProducts(
         com.google.cloud.vision.v1.PurgeProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1861,22 +1396,7 @@ public final class ProductSearchGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages Products and ProductSets of reference images for use in product
-   * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
-   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
-   * products into groups to limit identification.
-   * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
-   * </pre>
-   */
+  /** */
   public static final class ProductSearchBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ProductSearchBlockingStub> {
     private ProductSearchBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1889,358 +1409,133 @@ public final class ProductSearchGrpc {
       return new ProductSearchBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ProductSet resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing, or is longer than
-     *   4096 characters.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ProductSet createProductSet(
         com.google.cloud.vision.v1.CreateProductSetRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ProductSets in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ListProductSetsResponse listProductSets(
         com.google.cloud.vision.v1.ListProductSetsRequest request) {
       return blockingUnaryCall(getChannel(), getListProductSetsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ProductSet getProductSet(
         com.google.cloud.vision.v1.GetProductSetRequest request) {
       return blockingUnaryCall(getChannel(), getGetProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a ProductSet resource.
-     * Only display_name can be updated currently.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but
-     *   missing from the request or longer than 4096 characters.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ProductSet updateProductSet(
         com.google.cloud.vision.v1.UpdateProductSetRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a ProductSet. Products and ReferenceImages in the
-     * ProductSet are not deleted.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteProductSet(
         com.google.cloud.vision.v1.DeleteProductSetRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new product resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is missing or invalid.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.Product createProduct(
         com.google.cloud.vision.v1.CreateProductRequest request) {
       return blockingUnaryCall(getChannel(), getCreateProductMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists products in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ListProductsResponse listProducts(
         com.google.cloud.vision.v1.ListProductsRequest request) {
       return blockingUnaryCall(getChannel(), getListProductsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a Product.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.Product getProduct(
         com.google.cloud.vision.v1.GetProductRequest request) {
       return blockingUnaryCall(getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a Product resource.
-     * Only the `display_name`, `description`, and `labels` fields can be updated
-     * right now.
-     * If labels are updated, the change will not be reflected in queries until
-     * the next index time.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but is
-     *   missing from the request or longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if description is present in update_mask but is
-     *   longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is present in update_mask.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.Product updateProduct(
         com.google.cloud.vision.v1.UpdateProductRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateProductMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a product and its reference images.
-     * Metadata of the product and all its images will be deleted right away, but
-     * search queries against ProductSets containing the product may still work
-     * until all related caches are refreshed.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteProduct(
         com.google.cloud.vision.v1.DeleteProductRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteProductMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ReferenceImage resource.
-     * The `bounding_poly` field is optional. If `bounding_poly` is not specified,
-     * the system will try to detect regions of interest in the image that are
-     * compatible with the product_category on the parent product. If it is
-     * specified, detection is ALWAYS skipped. The system converts polygons into
-     * non-rotated rectangles.
-     * Note that the pipeline will resize the image if the image resolution is too
-     * large to process (above 50MP).
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if the product does not exist.
-     * * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-     *   compatible with the parent product's product_category is detected.
-     * * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ReferenceImage createReferenceImage(
         com.google.cloud.vision.v1.CreateReferenceImageRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateReferenceImageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a reference image.
-     * The image metadata will be deleted right away, but search queries
-     * against ProductSets containing the image may still work until all related
-     * caches are refreshed.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteReferenceImage(
         com.google.cloud.vision.v1.DeleteReferenceImageRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteReferenceImageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists reference images.
-     * Possible errors:
-     * * Returns NOT_FOUND if the parent product does not exist.
-     * * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ListReferenceImagesResponse listReferenceImages(
         com.google.cloud.vision.v1.ListReferenceImagesRequest request) {
       return blockingUnaryCall(
           getChannel(), getListReferenceImagesMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ReferenceImage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the specified image does not exist.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ReferenceImage getReferenceImage(
         com.google.cloud.vision.v1.GetReferenceImageRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetReferenceImageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Adds a Product to the specified ProductSet. If the Product is already
-     * present, no change is made.
-     * One Product can be added to at most 100 ProductSets.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty addProductToProductSet(
         com.google.cloud.vision.v1.AddProductToProductSetRequest request) {
       return blockingUnaryCall(
           getChannel(), getAddProductToProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Removes a Product from the specified ProductSet.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty removeProductFromProductSet(
         com.google.cloud.vision.v1.RemoveProductFromProductSetRequest request) {
       return blockingUnaryCall(
           getChannel(), getRemoveProductFromProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists the Products in a ProductSet, in an unspecified order. If the
-     * ProductSet does not exist, the products field of the response will be
-     * empty.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.vision.v1.ListProductsInProductSetResponse listProductsInProductSet(
         com.google.cloud.vision.v1.ListProductsInProductSetRequest request) {
       return blockingUnaryCall(
           getChannel(), getListProductsInProductSetMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API that imports a list of reference images to specified
-     * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * `Operation.response` contains `ImportProductSetsResponse`. (results)
-     * The input source of this method is a csv file on Google Cloud Storage.
-     * For the format of the csv file please see
-     * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation importProductSets(
         com.google.cloud.vision.v1.ImportProductSetsRequest request) {
       return blockingUnaryCall(
           getChannel(), getImportProductSetsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API to delete all Products in a ProductSet or all Products
-     * that are in no ProductSet.
-     * If a Product is a member of the specified ProductSet in addition to other
-     * ProductSets, the Product will still be deleted.
-     * It is recommended to not delete the specified ProductSet until after this
-     * operation has completed. It is also recommended to not add any of the
-     * Products involved in the batch delete to a new ProductSet while this
-     * operation is running because those Products may still end up deleted.
-     * It's not possible to undo the PurgeProducts operation. Therefore, it is
-     * recommended to keep the csv files used in ImportProductSets (if that was
-     * how you originally built the Product Set) before starting PurgeProducts, in
-     * case you need to re-import the data after deletion.
-     * If the plan is to purge all of the Products from a ProductSet and then
-     * re-use the empty ProductSet to re-import new Products into the empty
-     * ProductSet, you must wait until the PurgeProducts operation has finished
-     * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation purgeProducts(
         com.google.cloud.vision.v1.PurgeProductsRequest request) {
       return blockingUnaryCall(getChannel(), getPurgeProductsMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Manages Products and ProductSets of reference images for use in product
-   * search. It uses the following resource model:
-   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
-   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
-   * products into groups to limit identification.
-   * In parallel,
-   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
-   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
-   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
-   * </pre>
-   */
+  /** */
   public static final class ProductSearchFutureStub
       extends io.grpc.stub.AbstractFutureStub<ProductSearchFutureStub> {
     private ProductSearchFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -2253,32 +1548,14 @@ public final class ProductSearchGrpc {
       return new ProductSearchFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ProductSet resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing, or is longer than
-     *   4096 characters.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vision.v1.ProductSet>
         createProductSet(com.google.cloud.vision.v1.CreateProductSetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists ProductSets in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1.ListProductSetsResponse>
         listProductSets(com.google.cloud.vision.v1.ListProductSetsRequest request) {
@@ -2286,81 +1563,35 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getListProductSetsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ProductSet.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vision.v1.ProductSet>
         getProductSet(com.google.cloud.vision.v1.GetProductSetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a ProductSet resource.
-     * Only display_name can be updated currently.
-     * Possible errors:
-     * * Returns NOT_FOUND if the ProductSet does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but
-     *   missing from the request or longer than 4096 characters.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vision.v1.ProductSet>
         updateProductSet(com.google.cloud.vision.v1.UpdateProductSetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a ProductSet. Products and ReferenceImages in the
-     * ProductSet are not deleted.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProductSet(com.google.cloud.vision.v1.DeleteProductSetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new product resource.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is missing or invalid.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vision.v1.Product>
         createProduct(com.google.cloud.vision.v1.CreateProductRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateProductMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists products in an unspecified order.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1.ListProductsResponse>
         listProducts(com.google.cloud.vision.v1.ListProductsRequest request) {
@@ -2368,82 +1599,28 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getListProductsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a Product.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vision.v1.Product>
         getProduct(com.google.cloud.vision.v1.GetProductRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getGetProductMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Makes changes to a Product resource.
-     * Only the `display_name`, `description`, and `labels` fields can be updated
-     * right now.
-     * If labels are updated, the change will not be reflected in queries until
-     * the next index time.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product does not exist.
-     * * Returns INVALID_ARGUMENT if display_name is present in update_mask but is
-     *   missing from the request or longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if description is present in update_mask but is
-     *   longer than 4096 characters.
-     * * Returns INVALID_ARGUMENT if product_category is present in update_mask.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.vision.v1.Product>
         updateProduct(com.google.cloud.vision.v1.UpdateProductRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateProductMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a product and its reference images.
-     * Metadata of the product and all its images will be deleted right away, but
-     * search queries against ProductSets containing the product may still work
-     * until all related caches are refreshed.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteProduct(com.google.cloud.vision.v1.DeleteProductRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteProductMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates and returns a new ReferenceImage resource.
-     * The `bounding_poly` field is optional. If `bounding_poly` is not specified,
-     * the system will try to detect regions of interest in the image that are
-     * compatible with the product_category on the parent product. If it is
-     * specified, detection is ALWAYS skipped. The system converts polygons into
-     * non-rotated rectangles.
-     * Note that the pipeline will resize the image if the image resolution is too
-     * large to process (above 50MP).
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-     *   characters.
-     * * Returns INVALID_ARGUMENT if the product does not exist.
-     * * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-     *   compatible with the parent product's product_category is detected.
-     * * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1.ReferenceImage>
         createReferenceImage(com.google.cloud.vision.v1.CreateReferenceImageRequest request) {
@@ -2451,34 +1628,14 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getCreateReferenceImageMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Permanently deletes a reference image.
-     * The image metadata will be deleted right away, but search queries
-     * against ProductSets containing the image may still work until all related
-     * caches are refreshed.
-     * The actual image files are not deleted from Google Cloud Storage.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteReferenceImage(com.google.cloud.vision.v1.DeleteReferenceImageRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteReferenceImageMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists reference images.
-     * Possible errors:
-     * * Returns NOT_FOUND if the parent product does not exist.
-     * * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
-     *   than 1.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1.ListReferenceImagesResponse>
         listReferenceImages(com.google.cloud.vision.v1.ListReferenceImagesRequest request) {
@@ -2486,15 +1643,7 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getListReferenceImagesMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Gets information associated with a ReferenceImage.
-     * Possible errors:
-     * * Returns NOT_FOUND if the specified image does not exist.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1.ReferenceImage>
         getReferenceImage(com.google.cloud.vision.v1.GetReferenceImageRequest request) {
@@ -2502,30 +1651,14 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getGetReferenceImageMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Adds a Product to the specified ProductSet. If the Product is already
-     * present, no change is made.
-     * One Product can be added to at most 100 ProductSets.
-     * Possible errors:
-     * * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         addProductToProductSet(com.google.cloud.vision.v1.AddProductToProductSetRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getAddProductToProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Removes a Product from the specified ProductSet.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         removeProductFromProductSet(
             com.google.cloud.vision.v1.RemoveProductFromProductSetRequest request) {
@@ -2533,17 +1666,7 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getRemoveProductFromProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Lists the Products in a ProductSet, in an unspecified order. If the
-     * ProductSet does not exist, the products field of the response will be
-     * empty.
-     * Possible errors:
-     * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.vision.v1.ListProductsInProductSetResponse>
         listProductsInProductSet(
@@ -2552,52 +1675,14 @@ public final class ProductSearchGrpc {
           getChannel().newCall(getListProductsInProductSetMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API that imports a list of reference images to specified
-     * product sets based on a list of image information.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * `Operation.response` contains `ImportProductSetsResponse`. (results)
-     * The input source of this method is a csv file on Google Cloud Storage.
-     * For the format of the csv file please see
-     * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         importProductSets(com.google.cloud.vision.v1.ImportProductSetsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getImportProductSetsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Asynchronous API to delete all Products in a ProductSet or all Products
-     * that are in no ProductSet.
-     * If a Product is a member of the specified ProductSet in addition to other
-     * ProductSets, the Product will still be deleted.
-     * It is recommended to not delete the specified ProductSet until after this
-     * operation has completed. It is also recommended to not add any of the
-     * Products involved in the batch delete to a new ProductSet while this
-     * operation is running because those Products may still end up deleted.
-     * It's not possible to undo the PurgeProducts operation. Therefore, it is
-     * recommended to keep the csv files used in ImportProductSets (if that was
-     * how you originally built the Product Set) before starting PurgeProducts, in
-     * case you need to re-import the data after deletion.
-     * If the plan is to purge all of the Products from a ProductSet and then
-     * re-use the empty ProductSet to re-import new Products into the empty
-     * ProductSet, you must wait until the PurgeProducts operation has finished
-     * for that ProductSet.
-     * The [google.longrunning.Operation][google.longrunning.Operation] API can be used to keep track of the
-     * progress and results of the request.
-     * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         purgeProducts(com.google.cloud.vision.v1.PurgeProductsRequest request) {
       return futureUnaryCall(
