@@ -83,7 +83,6 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -201,7 +200,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<ProductSet> extractResources(ListProductSetsResponse payload) {
-              return Objects.isNull(payload.getProductSetsList())
+              return payload.getProductSetsList() == null
                   ? ImmutableList.<ProductSet>of()
                   : payload.getProductSetsList();
             }
@@ -237,7 +236,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<Product> extractResources(ListProductsResponse payload) {
-              return Objects.isNull(payload.getProductsList())
+              return payload.getProductsList() == null
                   ? ImmutableList.<Product>of()
                   : payload.getProductsList();
             }
@@ -277,7 +276,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<ReferenceImage> extractResources(ListReferenceImagesResponse payload) {
-              return Objects.isNull(payload.getReferenceImagesList())
+              return payload.getReferenceImagesList() == null
                   ? ImmutableList.<ReferenceImage>of()
                   : payload.getReferenceImagesList();
             }
@@ -321,7 +320,7 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
 
             @Override
             public Iterable<Product> extractResources(ListProductsInProductSetResponse payload) {
-              return Objects.isNull(payload.getProductsList())
+              return payload.getProductsList() == null
                   ? ImmutableList.<Product>of()
                   : payload.getProductsList();
             }
