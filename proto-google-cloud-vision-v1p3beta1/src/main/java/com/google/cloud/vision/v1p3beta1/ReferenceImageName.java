@@ -123,7 +123,7 @@ public class ReferenceImageName implements ResourceName {
   public static List<String> toStringList(List<ReferenceImageName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ReferenceImageName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -138,20 +138,20 @@ public class ReferenceImageName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (!Objects.isNull(product)) {
+          if (product != null) {
             fieldMapBuilder.put("product", product);
           }
-          if (!Objects.isNull(referenceImage)) {
+          if (referenceImage != null) {
             fieldMapBuilder.put("reference_image", referenceImage);
           }
           fieldValuesMap = fieldMapBuilder.build();
