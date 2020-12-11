@@ -95,7 +95,7 @@ public class ProductSearchClientTest {
     ProductSet expectedResponse =
         ProductSet.newBuilder()
             .setName(ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexError(Status.newBuilder().build())
             .build();
@@ -103,7 +103,7 @@ public class ProductSearchClientTest {
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     ProductSet productSet = ProductSet.newBuilder().build();
-    String productSetId = "product_set_id4216680";
+    String productSetId = "productSetId1003042158";
 
     ProductSet actualResponse = client.createProductSet(parent, productSet, productSetId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -129,7 +129,7 @@ public class ProductSearchClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       ProductSet productSet = ProductSet.newBuilder().build();
-      String productSetId = "product_set_id4216680";
+      String productSetId = "productSetId1003042158";
       client.createProductSet(parent, productSet, productSetId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -142,7 +142,7 @@ public class ProductSearchClientTest {
     ProductSet expectedResponse =
         ProductSet.newBuilder()
             .setName(ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexError(Status.newBuilder().build())
             .build();
@@ -150,7 +150,7 @@ public class ProductSearchClientTest {
 
     String parent = "parent-995424086";
     ProductSet productSet = ProductSet.newBuilder().build();
-    String productSetId = "product_set_id4216680";
+    String productSetId = "productSetId1003042158";
 
     ProductSet actualResponse = client.createProductSet(parent, productSet, productSetId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -176,7 +176,7 @@ public class ProductSearchClientTest {
     try {
       String parent = "parent-995424086";
       ProductSet productSet = ProductSet.newBuilder().build();
-      String productSetId = "product_set_id4216680";
+      String productSetId = "productSetId1003042158";
       client.createProductSet(parent, productSet, productSetId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -277,7 +277,7 @@ public class ProductSearchClientTest {
     ProductSet expectedResponse =
         ProductSet.newBuilder()
             .setName(ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexError(Status.newBuilder().build())
             .build();
@@ -318,7 +318,7 @@ public class ProductSearchClientTest {
     ProductSet expectedResponse =
         ProductSet.newBuilder()
             .setName(ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexError(Status.newBuilder().build())
             .build();
@@ -359,7 +359,7 @@ public class ProductSearchClientTest {
     ProductSet expectedResponse =
         ProductSet.newBuilder()
             .setName(ProductSetName.of("[PROJECT]", "[LOCATION]", "[PRODUCT_SET]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setIndexTime(Timestamp.newBuilder().build())
             .setIndexError(Status.newBuilder().build())
             .build();
@@ -471,16 +471,16 @@ public class ProductSearchClientTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setProductCategory("product_category-1607451058")
+            .setProductCategory("productCategory197299981")
             .addAllProductLabels(new ArrayList<Product.KeyValue>())
             .build();
     mockProductSearch.addResponse(expectedResponse);
 
     LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Product product = Product.newBuilder().build();
-    String productId = "product_id1753008747";
+    String productId = "productId-1051830678";
 
     Product actualResponse = client.createProduct(parent, product, productId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -506,7 +506,7 @@ public class ProductSearchClientTest {
     try {
       LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Product product = Product.newBuilder().build();
-      String productId = "product_id1753008747";
+      String productId = "productId-1051830678";
       client.createProduct(parent, product, productId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -519,16 +519,16 @@ public class ProductSearchClientTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setProductCategory("product_category-1607451058")
+            .setProductCategory("productCategory197299981")
             .addAllProductLabels(new ArrayList<Product.KeyValue>())
             .build();
     mockProductSearch.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
     Product product = Product.newBuilder().build();
-    String productId = "product_id1753008747";
+    String productId = "productId-1051830678";
 
     Product actualResponse = client.createProduct(parent, product, productId);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -554,7 +554,7 @@ public class ProductSearchClientTest {
     try {
       String parent = "parent-995424086";
       Product product = Product.newBuilder().build();
-      String productId = "product_id1753008747";
+      String productId = "productId-1051830678";
       client.createProduct(parent, product, productId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -655,9 +655,9 @@ public class ProductSearchClientTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setProductCategory("product_category-1607451058")
+            .setProductCategory("productCategory197299981")
             .addAllProductLabels(new ArrayList<Product.KeyValue>())
             .build();
     mockProductSearch.addResponse(expectedResponse);
@@ -697,9 +697,9 @@ public class ProductSearchClientTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setProductCategory("product_category-1607451058")
+            .setProductCategory("productCategory197299981")
             .addAllProductLabels(new ArrayList<Product.KeyValue>())
             .build();
     mockProductSearch.addResponse(expectedResponse);
@@ -739,9 +739,9 @@ public class ProductSearchClientTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .setProductCategory("product_category-1607451058")
+            .setProductCategory("productCategory197299981")
             .addAllProductLabels(new ArrayList<Product.KeyValue>())
             .build();
     mockProductSearch.addResponse(expectedResponse);
@@ -861,7 +861,7 @@ public class ProductSearchClientTest {
 
     ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
     ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-    String referenceImageId = "reference_image_id1946713331";
+    String referenceImageId = "referenceImageId1224107531";
 
     ReferenceImage actualResponse =
         client.createReferenceImage(parent, referenceImage, referenceImageId);
@@ -889,7 +889,7 @@ public class ProductSearchClientTest {
     try {
       ProductName parent = ProductName.of("[PROJECT]", "[LOCATION]", "[PRODUCT]");
       ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-      String referenceImageId = "reference_image_id1946713331";
+      String referenceImageId = "referenceImageId1224107531";
       client.createReferenceImage(parent, referenceImage, referenceImageId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -911,7 +911,7 @@ public class ProductSearchClientTest {
 
     String parent = "parent-995424086";
     ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-    String referenceImageId = "reference_image_id1946713331";
+    String referenceImageId = "referenceImageId1224107531";
 
     ReferenceImage actualResponse =
         client.createReferenceImage(parent, referenceImage, referenceImageId);
@@ -939,7 +939,7 @@ public class ProductSearchClientTest {
     try {
       String parent = "parent-995424086";
       ReferenceImage referenceImage = ReferenceImage.newBuilder().build();
-      String referenceImageId = "reference_image_id1946713331";
+      String referenceImageId = "referenceImageId1224107531";
       client.createReferenceImage(parent, referenceImage, referenceImageId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
