@@ -184,8 +184,8 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param parent Required. The project in which the ProductSet should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param product_set Required. The ProductSet to create.
-   * @param product_set_id A user-supplied resource id for this ProductSet. If set, the server will
+   * @param productSet Required. The ProductSet to create.
+   * @param productSetId A user-supplied resource id for this ProductSet. If set, the server will
    *     attempt to use this value as the resource id. If it is already in use, an error is returned
    *     with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the
    *     character `/`.
@@ -214,8 +214,8 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param parent Required. The project in which the ProductSet should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param product_set Required. The ProductSet to create.
-   * @param product_set_id A user-supplied resource id for this ProductSet. If set, the server will
+   * @param productSet Required. The ProductSet to create.
+   * @param productSetId A user-supplied resource id for this ProductSet. If set, the server will
    *     attempt to use this value as the resource id. If it is already in use, an error is returned
    *     with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the
    *     character `/`.
@@ -441,8 +441,8 @@ public class ProductSearchClient implements BackgroundResource {
    *       request or longer than 4096 characters.
    * </ul>
    *
-   * @param product_set Required. The ProductSet resource which replaces the one on the server.
-   * @param update_mask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
+   * @param productSet Required. The ProductSet resource which replaces the one on the server.
+   * @param updateMask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
    *     update. If update_mask isn't specified, all mutable fields are to be updated. Valid mask
    *     path is `display_name`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -592,7 +592,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param parent Required. The project in which the Product should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @param product Required. The product to create.
-   * @param product_id A user-supplied resource id for this Product. If set, the server will attempt
+   * @param productId A user-supplied resource id for this Product. If set, the server will attempt
    *     to use this value as the resource id. If it is already in use, an error is returned with
    *     code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character
    *     `/`.
@@ -623,7 +623,7 @@ public class ProductSearchClient implements BackgroundResource {
    * @param parent Required. The project in which the Product should be created.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @param product Required. The product to create.
-   * @param product_id A user-supplied resource id for this Product. If set, the server will attempt
+   * @param productId A user-supplied resource id for this Product. If set, the server will attempt
    *     to use this value as the resource id. If it is already in use, an error is returned with
    *     code ALREADY_EXISTS. Must be at most 128 characters long. It cannot contain the character
    *     `/`.
@@ -860,7 +860,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param product Required. The Product resource which replaces the one on the server.
    *     product.name is immutable.
-   * @param update_mask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
+   * @param updateMask The [FieldMask][google.protobuf.FieldMask] that specifies which fields to
    *     update. If update_mask isn't specified, all mutable fields are to be updated. Valid mask
    *     paths include `product_labels`, `display_name`, and `description`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1034,12 +1034,12 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the product in which to create the reference image.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
-   * @param reference_image Required. The reference image to create. If an image ID is specified, it
+   * @param referenceImage Required. The reference image to create. If an image ID is specified, it
    *     is ignored.
-   * @param reference_image_id A user-supplied resource id for the ReferenceImage to be added. If
-   *     set, the server will attempt to use this value as the resource id. If it is already in use,
-   *     an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It
-   *     cannot contain the character `/`.
+   * @param referenceImageId A user-supplied resource id for the ReferenceImage to be added. If set,
+   *     the server will attempt to use this value as the resource id. If it is already in use, an
+   *     error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot
+   *     contain the character `/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage createReferenceImage(
@@ -1077,12 +1077,12 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param parent Required. Resource name of the product in which to create the reference image.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
-   * @param reference_image Required. The reference image to create. If an image ID is specified, it
+   * @param referenceImage Required. The reference image to create. If an image ID is specified, it
    *     is ignored.
-   * @param reference_image_id A user-supplied resource id for the ReferenceImage to be added. If
-   *     set, the server will attempt to use this value as the resource id. If it is already in use,
-   *     an error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It
-   *     cannot contain the character `/`.
+   * @param referenceImageId A user-supplied resource id for the ReferenceImage to be added. If set,
+   *     the server will attempt to use this value as the resource id. If it is already in use, an
+   *     error is returned with code ALREADY_EXISTS. Must be at most 128 characters long. It cannot
+   *     contain the character `/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage createReferenceImage(
@@ -1821,7 +1821,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param parent Required. The project in which the ProductSets should be imported.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param input_config Required. The input content for the list of requests.
+   * @param inputConfig Required. The input content for the list of requests.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>
@@ -1850,7 +1850,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param parent Required. The project in which the ProductSets should be imported.
    *     <p>Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param input_config Required. The input content for the list of requests.
+   * @param inputConfig Required. The input content for the list of requests.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportProductSetsResponse, BatchOperationMetadata>

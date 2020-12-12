@@ -249,7 +249,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * json file containing BatchAnnotateImagesResponse proto.
    *
    * @param requests Required. Individual image annotation requests for this batch.
-   * @param output_config Required. The desired output location and metadata (e.g. format).
+   * @param outputConfig Required. The desired output location and metadata (e.g. format).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AsyncBatchAnnotateImagesResponse, OperationMetadata>
