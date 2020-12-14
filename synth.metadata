@@ -11,40 +11,40 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
-        "internalRef": "344839236"
+        "sha": "d52da5868621efd847257c089e0e3d7af4bc258f",
+        "internalRef": "344845074"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
-        "internalRef": "344839236"
+        "sha": "d52da5868621efd847257c089e0e3d7af4bc258f",
+        "internalRef": "344845074"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
-        "internalRef": "344839236"
+        "sha": "d52da5868621efd847257c089e0e3d7af4bc258f",
+        "internalRef": "344845074"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
-        "internalRef": "344839236"
+        "sha": "d52da5868621efd847257c089e0e3d7af4bc258f",
+        "internalRef": "344845074"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
-        "internalRef": "344839236"
+        "sha": "d52da5868621efd847257c089e0e3d7af4bc258f",
+        "internalRef": "344845074"
       }
     },
     {
@@ -223,22 +223,18 @@
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/ProductSearchStub.java",
     "google-cloud-vision/src/main/java/com/google/cloud/vision/v1p4beta1/stub/ProductSearchStubSettings.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/ImageAnnotatorClientTest.java",
-    "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/ImageAnnotatorSmokeTest.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockImageAnnotator.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockImageAnnotatorImpl.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockProductSearch.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/MockProductSearchImpl.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1/ProductSearchClientTest.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorClientTest.java",
-    "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/ImageAnnotatorSmokeTest.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/MockImageAnnotator.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p1beta1/MockImageAnnotatorImpl.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorClientTest.java",
-    "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/ImageAnnotatorSmokeTest.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/MockImageAnnotator.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p2beta1/MockImageAnnotatorImpl.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorClientTest.java",
-    "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/ImageAnnotatorSmokeTest.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockImageAnnotator.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockImageAnnotatorImpl.java",
     "google-cloud-vision/src/test/java/com/google/cloud/vision/v1p3beta1/MockProductSearch.java",
