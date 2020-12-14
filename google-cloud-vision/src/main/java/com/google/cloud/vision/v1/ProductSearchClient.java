@@ -37,7 +37,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -196,7 +195,7 @@ public class ProductSearchClient implements BackgroundResource {
       LocationName parent, ProductSet productSet, String productSetId) {
     CreateProductSetRequest request =
         CreateProductSetRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setProductSet(productSet)
             .setProductSetId(productSetId)
             .build();
@@ -283,7 +282,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final ListProductSetsPagedResponse listProductSets(LocationName parent) {
     ListProductSetsRequest request =
         ListProductSetsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listProductSets(request);
   }
@@ -374,9 +373,7 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final ProductSet getProductSet(ProductSetName name) {
     GetProductSetRequest request =
-        GetProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProductSet(request);
   }
 
@@ -509,9 +506,7 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final void deleteProductSet(ProductSetName name) {
     DeleteProductSetRequest request =
-        DeleteProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteProductSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProductSet(request);
   }
 
@@ -582,7 +577,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final Product createProduct(LocationName parent, Product product, String productId) {
     CreateProductRequest request =
         CreateProductRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setProduct(product)
             .setProductId(productId)
             .build();
@@ -674,7 +669,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final ListProductsPagedResponse listProducts(LocationName parent) {
     ListProductsRequest request =
         ListProductsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listProducts(request);
   }
@@ -764,9 +759,7 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final Product getProduct(ProductName name) {
     GetProductRequest request =
-        GetProductRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProduct(request);
   }
 
@@ -919,9 +912,7 @@ public class ProductSearchClient implements BackgroundResource {
    */
   public final void deleteProduct(ProductName name) {
     DeleteProductRequest request =
-        DeleteProductRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteProduct(request);
   }
 
@@ -1007,7 +998,7 @@ public class ProductSearchClient implements BackgroundResource {
       ProductName parent, ReferenceImage referenceImage, String referenceImageId) {
     CreateReferenceImageRequest request =
         CreateReferenceImageRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setReferenceImage(referenceImage)
             .setReferenceImageId(referenceImageId)
             .build();
@@ -1132,7 +1123,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final void deleteReferenceImage(ReferenceImageName name) {
     DeleteReferenceImageRequest request =
         DeleteReferenceImageRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteReferenceImage(request);
   }
@@ -1206,7 +1197,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final ListReferenceImagesPagedResponse listReferenceImages(ProductName parent) {
     ListReferenceImagesRequest request =
         ListReferenceImagesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listReferenceImages(request);
   }
@@ -1305,7 +1296,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final ReferenceImage getReferenceImage(ReferenceImageName name) {
     GetReferenceImageRequest request =
         GetReferenceImageRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getReferenceImage(request);
   }
@@ -1385,8 +1376,8 @@ public class ProductSearchClient implements BackgroundResource {
   public final void addProductToProductSet(ProductSetName name, ProductName product) {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .setProduct(Objects.isNull(product) ? null : product.toString())
+            .setName(name == null ? null : name.toString())
+            .setProduct(product == null ? null : product.toString())
             .build();
     addProductToProductSet(request);
   }
@@ -1413,7 +1404,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final void addProductToProductSet(ProductSetName name, String product) {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setProduct(product)
             .build();
     addProductToProductSet(request);
@@ -1442,7 +1433,7 @@ public class ProductSearchClient implements BackgroundResource {
     AddProductToProductSetRequest request =
         AddProductToProductSetRequest.newBuilder()
             .setName(name)
-            .setProduct(Objects.isNull(product) ? null : product.toString())
+            .setProduct(product == null ? null : product.toString())
             .build();
     addProductToProductSet(request);
   }
@@ -1525,8 +1516,8 @@ public class ProductSearchClient implements BackgroundResource {
   public final void removeProductFromProductSet(ProductSetName name, ProductName product) {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .setProduct(Objects.isNull(product) ? null : product.toString())
+            .setName(name == null ? null : name.toString())
+            .setProduct(product == null ? null : product.toString())
             .build();
     removeProductFromProductSet(request);
   }
@@ -1544,7 +1535,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final void removeProductFromProductSet(ProductSetName name, String product) {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .setProduct(product)
             .build();
     removeProductFromProductSet(request);
@@ -1564,7 +1555,7 @@ public class ProductSearchClient implements BackgroundResource {
     RemoveProductFromProductSetRequest request =
         RemoveProductFromProductSetRequest.newBuilder()
             .setName(name)
-            .setProduct(Objects.isNull(product) ? null : product.toString())
+            .setProduct(product == null ? null : product.toString())
             .build();
     removeProductFromProductSet(request);
   }
@@ -1625,7 +1616,7 @@ public class ProductSearchClient implements BackgroundResource {
   public final ListProductsInProductSetPagedResponse listProductsInProductSet(ProductSetName name) {
     ListProductsInProductSetRequest request =
         ListProductsInProductSetRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return listProductsInProductSet(request);
   }
@@ -1729,7 +1720,7 @@ public class ProductSearchClient implements BackgroundResource {
       importProductSetsAsync(LocationName parent, ImportProductSetsInputConfig inputConfig) {
     ImportProductSetsRequest request =
         ImportProductSetsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setInputConfig(inputConfig)
             .build();
     return importProductSetsAsync(request);
@@ -1858,7 +1849,7 @@ public class ProductSearchClient implements BackgroundResource {
       LocationName parent) {
     PurgeProductsRequest request =
         PurgeProductsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return purgeProductsAsync(request);
   }
