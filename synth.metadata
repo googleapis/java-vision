@@ -11,40 +11,40 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
+        "internalRef": "344839236"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
+        "internalRef": "344839236"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
+        "internalRef": "344839236"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
+        "internalRef": "344839236"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "b11a87f3b54be3a5e42c15020ee1e0781f86da90",
-        "internalRef": "344134135"
+        "sha": "80a56e032bcc6a52cc41091c9a9ab527ec233f1f",
+        "internalRef": "344839236"
       }
     },
     {
@@ -422,6 +422,8 @@
     "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextAnnotation.java",
     "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextAnnotationOrBuilder.java",
     "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextAnnotationProto.java",
+    "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextDetectionParams.java",
+    "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/TextDetectionParamsOrBuilder.java",
     "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductRequest.java",
     "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductRequestOrBuilder.java",
     "proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/UpdateProductSetRequest.java",
@@ -499,6 +501,8 @@
     "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextAnnotation.java",
     "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextAnnotationOrBuilder.java",
     "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextAnnotationProto.java",
+    "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextDetectionParams.java",
+    "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/TextDetectionParamsOrBuilder.java",
     "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/Vertex.java",
     "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/VertexOrBuilder.java",
     "proto-google-cloud-vision-v1p1beta1/src/main/java/com/google/cloud/vision/v1p1beta1/WebDetection.java",
@@ -594,6 +598,8 @@
     "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextAnnotation.java",
     "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextAnnotationOrBuilder.java",
     "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextAnnotationProto.java",
+    "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextDetectionParams.java",
+    "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/TextDetectionParamsOrBuilder.java",
     "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/Vertex.java",
     "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/VertexOrBuilder.java",
     "proto-google-cloud-vision-v1p2beta1/src/main/java/com/google/cloud/vision/v1p2beta1/WebDetection.java",
@@ -759,6 +765,8 @@
     "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextAnnotation.java",
     "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextAnnotationOrBuilder.java",
     "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextAnnotationProto.java",
+    "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextDetectionParams.java",
+    "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/TextDetectionParamsOrBuilder.java",
     "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductRequest.java",
     "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductRequestOrBuilder.java",
     "proto-google-cloud-vision-v1p3beta1/src/main/java/com/google/cloud/vision/v1p3beta1/UpdateProductSetRequest.java",
@@ -947,6 +955,8 @@
     "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextAnnotation.java",
     "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextAnnotationOrBuilder.java",
     "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextAnnotationProto.java",
+    "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextDetectionParams.java",
+    "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/TextDetectionParamsOrBuilder.java",
     "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductRequest.java",
     "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductRequestOrBuilder.java",
     "proto-google-cloud-vision-v1p4beta1/src/main/java/com/google/cloud/vision/v1p4beta1/UpdateProductSetRequest.java",
