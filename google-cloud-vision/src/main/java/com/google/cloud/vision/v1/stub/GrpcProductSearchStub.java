@@ -325,11 +325,21 @@ public class GrpcProductSearchStub extends ProductSearchStub {
         ProductSearchStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcProductSearchStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcProductSearchStub(ProductSearchStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcProductSearchCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcProductSearchStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
   protected GrpcProductSearchStub(
       ProductSearchStubSettings settings,
       ClientContext clientContext,
