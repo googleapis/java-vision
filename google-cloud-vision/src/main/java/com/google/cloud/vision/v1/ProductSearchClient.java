@@ -705,7 +705,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the ProductSet to get.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(ProductSetName name) {
@@ -734,7 +734,7 @@ public class ProductSearchClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the ProductSet to get.
-   *     <p>Format is: `projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID`
+   *     <p>Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ProductSet getProductSet(String name) {
@@ -1872,7 +1872,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the reference image to delete.
    *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
+   *     `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteReferenceImage(ReferenceImageName name) {
@@ -1905,7 +1905,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the reference image to delete.
    *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
+   *     `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteReferenceImage(String name) {
@@ -2168,7 +2168,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the ReferenceImage to get.
    *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+   *     `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage getReferenceImage(ReferenceImageName name) {
@@ -2202,7 +2202,7 @@ public class ProductSearchClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the ReferenceImage to get.
    *     <p>Format is:
-   *     <p>`projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
+   *     `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceImage getReferenceImage(String name) {
