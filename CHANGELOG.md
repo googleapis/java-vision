@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.114.0](https://www.github.com/googleapis/java-vision/compare/v1.113.7...v1.114.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#593](https://www.github.com/googleapis/java-vision/issues/593)) ([9a368db](https://www.github.com/googleapis/java-vision/commit/9a368db9510ca7a97c5eca8754f40bce37bfcfff))
+
 ### [1.113.7](https://www.github.com/googleapis/java-vision/compare/v1.113.6...v1.113.7) (2021-07-22)
 
 
