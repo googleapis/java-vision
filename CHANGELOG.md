@@ -1,5 +1,43 @@
 # Changelog
 
+### [2.0.6](https://www.github.com/googleapis/java-vision/compare/v2.0.5...v2.0.6) (2021-09-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.2 ([#652](https://www.github.com/googleapis/java-vision/issues/652)) ([e517714](https://www.github.com/googleapis/java-vision/commit/e517714ab1296e394bf87e200c5aea72bb0c4213))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.2.0 ([#654](https://www.github.com/googleapis/java-vision/issues/654)) ([0854ec5](https://www.github.com/googleapis/java-vision/commit/0854ec5235c3bedd7a6bfe98fe5754d54009bfee))
+* update dependency com.google.cloud:google-cloud-storage to v2.1.0 ([#646](https://www.github.com/googleapis/java-vision/issues/646)) ([66b1eb5](https://www.github.com/googleapis/java-vision/commit/66b1eb5cc1b0cfd751f7dbaceec1c946f77e1304))
+
+### [2.0.5](https://www.github.com/googleapis/java-vision/compare/v2.0.4...v2.0.5) (2021-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.1 ([#641](https://www.github.com/googleapis/java-vision/issues/641)) ([8f6a86e](https://www.github.com/googleapis/java-vision/commit/8f6a86ea488769ffcfe24cb056aff22b915ad1fa))
+
+### [2.0.4](https://www.github.com/googleapis/java-vision/compare/v2.0.3...v2.0.4) (2021-08-24)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.1.0 ([#634](https://www.github.com/googleapis/java-vision/issues/634)) ([1f56cd5](https://www.github.com/googleapis/java-vision/commit/1f56cd544816a82060c0e8a7bfabb30761b980cf))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.1.0 ([#635](https://www.github.com/googleapis/java-vision/issues/635)) ([eb040fe](https://www.github.com/googleapis/java-vision/commit/eb040fe4485c6d47f24ed407194b96f259e98eb5))
+
+### [2.0.3](https://www.github.com/googleapis/java-vision/compare/v2.0.2...v2.0.3) (2021-08-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v2.0.2 ([#628](https://www.github.com/googleapis/java-vision/issues/628)) ([13d3f83](https://www.github.com/googleapis/java-vision/commit/13d3f8383f78b98f6069a09902b5a722ca5c41fc))
+
+### [2.0.2](https://www.github.com/googleapis/java-vision/compare/v2.0.1...v2.0.2) (2021-08-19)
+
+
+### Dependencies
+
+* update spring.version to v2.5.4 ([#581](https://www.github.com/googleapis/java-vision/issues/581)) ([b5a13ec](https://www.github.com/googleapis/java-vision/commit/b5a13ecfd80ccb1122595aef4c07eef6fba16f8b))
+
 ### [2.0.1](https://www.github.com/googleapis/java-vision/compare/v2.0.0...v2.0.1) (2021-08-12)
 
 
