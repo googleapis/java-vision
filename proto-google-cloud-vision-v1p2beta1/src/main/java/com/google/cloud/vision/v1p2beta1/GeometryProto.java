@@ -52,19 +52,25 @@ public final class GeometryProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n,google/cloud/vision/v1p2beta1/geometry"
-          + ".proto\022\035google.cloud.vision.v1p2beta1\"\036\n"
-          + "\006Vertex\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020Normali"
-          + "zedVertex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\225\001\n\014Boun"
-          + "dingPoly\0227\n\010vertices\030\001 \003(\0132%.google.clou"
-          + "d.vision.v1p2beta1.Vertex\022L\n\023normalized_"
-          + "vertices\030\002 \003(\0132/.google.cloud.vision.v1p"
-          + "2beta1.NormalizedVertex\"+\n\010Position\022\t\n\001x"
-          + "\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B|\n!com.goog"
-          + "le.cloud.vision.v1p2beta1B\rGeometryProto"
-          + "P\001ZCgoogle.golang.org/genproto/googleapi"
-          + "s/cloud/vision/v1p2beta1;vision\370\001\001b\006prot"
-          + "o3"
+      "\n"
+          + ",google/cloud/vision/v1p2beta1/geometry.proto\022\035google.cloud.vision.v1p2beta1\"\036\n"
+          + "\006Vertex\022\t\n"
+          + "\001x\030\001 \001(\005\022\t\n"
+          + "\001y\030\002 \001(\005\"(\n"
+          + "\020NormalizedVertex\022\t\n"
+          + "\001x\030\001 \001(\002\022\t\n"
+          + "\001y\030\002 \001(\002\"\225\001\n"
+          + "\014BoundingPoly\0227\n"
+          + "\010vertices\030\001 \003(\0132%.google.cloud.vision.v1p2beta1.Vertex\022L\n"
+          + "\023normalized_vertices\030\002"
+          + " \003(\0132/.google.cloud.vision.v1p2beta1.NormalizedVertex\"+\n"
+          + "\010Position\022\t\n"
+          + "\001x\030\001 \001(\002\022\t\n"
+          + "\001y\030\002 \001(\002\022\t\n"
+          + "\001z\030\003 \001(\002B|\n"
+          + "!com.google.cloud.vision.v1p2beta1B\r"
+          + "GeometryProtoP\001ZCgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/vision/v1p2beta1;vision\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
