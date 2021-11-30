@@ -1,13 +1,13 @@
 {
   "resources":{
     "includes": [
-      {"pattern":"\\Qcity.jpg\\E"},
-      {"pattern":"\\Qface_no_surprise.jpg\\E"},
-      {"pattern":"\\Qlandmark.jpg\\E"},
-      {"pattern":"\\Qlogos.png\\E"},
-      {"pattern":"\\Qpuppies.jpg\\E"},
-      {"pattern":"\\Qtext.jpg\\E"},
-      {"pattern":"\\Qwakeupcat.jpg\\E"}
+      {"pattern":"\\Qsrc/test/resources/city.jpg\\E"},
+      {"pattern":"\\Qsrc/test/resources/face_no_surprise.jpg\\E"},
+      {"pattern":"\\Qsrc/test/resources/landmark.jpg\\E"},
+      {"pattern":"\\Qsrc/test/resources/logos.png\\E"},
+      {"pattern":"\\Qsrc/test/resources/puppies.jpg\\E"},
+      {"pattern":"\\Qsrc/test/resources/text.jpg\\E"},
+      {"pattern":"\\Qsrc/test/resources/wakeupcat.jpg\\E"}
     ]
   }
 }
