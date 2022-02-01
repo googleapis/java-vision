@@ -471,13 +471,10 @@ public class ITSystemTest {
     Feature feat = Feature.newBuilder().setType(Type.WEB_DETECTION).setMaxResults(15).build();
 
     AnnotateImageRequest request =
-      AnnotateImageRequest.newBuilder()
-        .addFeatures(feat)
-        .setImage(img)
-        .build();
+        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
 
     BatchAnnotateImagesResponse response =
-      imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
+        imageAnnotatorClient.batchAnnotateImages(ImmutableList.of(request));
     List<AnnotateImageResponse> responses = response.getResponsesList();
     List<String> actual = new ArrayList<>();
     for (AnnotateImageResponse imgResponse : responses) {
