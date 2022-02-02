@@ -518,7 +518,7 @@ public class ITSystemTest {
     assertThat(actual).containsAnyIn(expectedResults);
   }
 
-  @Test
+  @Test 
   public void detectWebEntitiesIncludeGeoResultsGcsTest() {
     ImageSource imgSource =
         ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + "landmark/pofa.jpg").build();
