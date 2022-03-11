@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>24.4.0</version>
+      <version>25.0.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -57,13 +57,13 @@ implementation 'com.google.cloud:google-cloud-vision'
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-vision:2.0.22'
+implementation 'com.google.cloud:google-cloud-vision:2.0.23'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "2.0.22"
+libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "2.0.23"
 ```
 
 ## Authentication
