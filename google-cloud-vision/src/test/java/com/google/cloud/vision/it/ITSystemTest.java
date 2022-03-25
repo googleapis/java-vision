@@ -69,6 +69,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -221,6 +222,8 @@ public class ITSystemTest {
       imgSource = ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + image).build();
       img = Image.newBuilder().setSource(imgSource).build();
     } else {
+      System.out.println("user.dir: " + System.getProperty("user.dir"));
+      System.out.println("File('.').getAbsolutePath: " + (new File(".").getAbsolutePath()));
       ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + image));
       img = Image.newBuilder().setContent(imgBytes).build();
     }
