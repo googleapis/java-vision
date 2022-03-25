@@ -229,9 +229,6 @@ public class ITSystemTest {
       imgSource = ImageSource.newBuilder().setGcsImageUri(SAMPLE_BUCKET + image).build();
       img = Image.newBuilder().setSource(imgSource).build();
     } else {
-      System.out.println("user.dir: " + System.getProperty("user.dir"));
-      System.out.println("File('.').getAbsolutePath: " + (new File(".").getAbsolutePath()));
-      System.out.println("RESOURCES: " + RESOURCES);
       ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + image));
       img = Image.newBuilder().setContent(imgBytes).build();
     }
