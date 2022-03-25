@@ -98,13 +98,11 @@ public class ITSystemTest {
   private static String formatReferenceImageName;
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
-  private static final String RESOURCES;
-  static {
-    // GraalVM native-image test uses the project root as working directory,not google-cloud-vision
-    RESOURCES = Files.exists(Paths.get("google-cloud-vision", "src", "test", "resources"))
-        ? "google-cloud-vision/src/test/resources"
-        : "src/test/resources/";
-  }
+  // GraalVM native-image test uses the project root as working directory, not google-cloud-vision
+  private static final String RESOURCES =
+      Files.exists(Paths.get("google-cloud-vision", "src", "test", "resources"))
+          ? "google-cloud-vision/src/test/resources/"
+          : "src/test/resources/";
 
   private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_VISION_BUCKET";
   private static final String SAMPLE_BUCKET;
