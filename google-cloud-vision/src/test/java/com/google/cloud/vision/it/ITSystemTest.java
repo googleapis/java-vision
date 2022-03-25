@@ -98,11 +98,14 @@ public class ITSystemTest {
   private static String formatReferenceImageName;
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
-  // GraalVM native-image test uses the project root as working directory,not google-cloud-vision
-  private static final String RESOURCES =
-      Files.exists(Paths.get("google-cloud-vision"))
-          ? "google-cloud-vision/src/test/resources"
-          : "src/test/resources/";
+  private static final String RESOURCES;
+  static {
+    // GraalVM native-image test uses the project root as working directory,not google-cloud-vision
+    RESOURCES = Files.exists(Paths.get("google-cloud-vision", "src", "test", "resources"))
+        ? "google-cloud-vision/src/test/resources"
+        : "src/test/resources/";
+  }
+
   private static final String GCS_BUCKET_ENV_VAR = "GOOGLE_CLOUD_TESTS_VISION_BUCKET";
   private static final String SAMPLE_BUCKET;
   private static final String SAMPLE_URI;
@@ -230,6 +233,7 @@ public class ITSystemTest {
     } else {
       System.out.println("user.dir: " + System.getProperty("user.dir"));
       System.out.println("File('.').getAbsolutePath: " + (new File(".").getAbsolutePath()));
+      System.out.println("RESOURCES: " + RESOURCES);
       ByteString imgBytes = ByteString.readFrom(new FileInputStream(RESOURCES + image));
       img = Image.newBuilder().setContent(imgBytes).build();
     }
