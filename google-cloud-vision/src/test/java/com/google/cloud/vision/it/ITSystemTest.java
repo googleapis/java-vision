@@ -393,7 +393,7 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    assertThat(actual).contains("37%");
+    assertThat(actual).contains("PS4");
   }
 
   @Test
