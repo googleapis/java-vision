@@ -393,7 +393,6 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    String result = String.join(" ",actual);
     assertThat(actual).contains("PS4");
   }
 
@@ -407,8 +406,8 @@ public class ITSystemTest {
         actual.add(annotation.getDescription());
       }
     }
-    String result = String.join(" ",actual);
-    assertThat(result).contains("37%");
+    String joinedActual = String.join(" ", actual);
+    assertThat(joinedActual).contains("37%");
   }
 
   @Test
