@@ -50,20 +50,20 @@ If you are using Maven without BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:25.3.0')
+implementation platform('com.google.cloud:libraries-bom:25.4.0')
 
 implementation 'com.google.cloud:google-cloud-vision'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-vision:2.0.29'
+implementation 'com.google.cloud:google-cloud-vision:2.1.1'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "2.0.29"
+libraryDependencies += "com.google.cloud" % "google-cloud-vision" % "2.1.1"
 ```
 
 ## Authentication
