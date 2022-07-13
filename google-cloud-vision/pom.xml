@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vision</artifactId>
-  <version>2.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+  <version>3.0.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Vision</name>
   <url>https://github.com/googleapis/java-vision</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vision-parent</artifactId>
-    <version>2.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
+    <version>3.0.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-vision:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vision</site.installationModule>
@@ -75,6 +75,10 @@
       <artifactId>gax-grpc</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
@@ -130,7 +134,19 @@
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
