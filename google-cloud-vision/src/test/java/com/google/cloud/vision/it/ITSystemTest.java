@@ -492,7 +492,7 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    assertThat(actual).contains("The Palace Of Fine Arts");
+    assertThat(actual).contains("Palace Of Fine Arts");
   }
 
   @Test
