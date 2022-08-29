@@ -492,7 +492,6 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    System.out.println(actual.contains("Palace of Fine Arts"));
     assertThat(actual).contains("Palace of Fine Arts");
   }
 
@@ -553,7 +552,6 @@ public class ITSystemTest {
         actual.add(entity.getDescription());
       }
     }
-    System.out.println(actual.contains("Palace of Fine Arts"));
     assertThat(actual).contains("Palace of Fine Arts");
   }
 
