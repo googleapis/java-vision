@@ -493,7 +493,7 @@ public class ITSystemTest {
       }
     }
     System.out.println(actual.contains("Palace of Fine Arts"));
-    assertThat(actual).contains("Palace Of Fine Arts");
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
@@ -554,7 +554,7 @@ public class ITSystemTest {
       }
     }
     System.out.println(actual.contains("Palace of Fine Arts"));
-    assertThat(actual).contains("Palace Of Fine Arts");
+    assertThat(actual).contains("Palace of Fine Arts");
   }
 
   @Test
