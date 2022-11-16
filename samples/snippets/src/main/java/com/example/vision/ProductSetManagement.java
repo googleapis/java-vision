@@ -17,8 +17,11 @@
 package com.example.vision;
 
 import com.google.cloud.vision.v1.CreateProductSetRequest;
+import com.google.cloud.vision.v1.LocationName;
+import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ProductSet;
+import com.google.cloud.vision.v1.ProductSetName;
 import java.io.IOException;
 import java.io.PrintStream;
 import net.sourceforge.argparse4j.ArgumentParsers;
@@ -52,7 +55,7 @@ public class ProductSetManagement {
     try (ProductSearchClient client = ProductSearchClient.create()) {
 
       // A resource that represents Google Cloud Platform location.
-      String formattedParent = ProductSearchClient.formatLocationName(projectId, computeRegion);
+      String formattedParent = LocationName.format(projectId, computeRegion);
 
       // Create a product set with the product set specification in the region.
       ProductSet myProductSet =
@@ -81,7 +84,7 @@ public class ProductSetManagement {
   public static void listProductSets(String projectId, String computeRegion) throws IOException {
     try (ProductSearchClient client = ProductSearchClient.create()) {
       // A resource that represents Google Cloud Platform location.
-      String formattedParent = ProductSearchClient.formatLocationName(projectId, computeRegion);
+      String formattedParent = LocationName.format(projectId, computeRegion);
       // List all the product sets available in the region.
       for (ProductSet productSet : client.listProductSets(formattedParent).iterateAll()) {
         // Display the product set information
@@ -114,8 +117,7 @@ public class ProductSetManagement {
     try (ProductSearchClient client = ProductSearchClient.create()) {
 
       // Get the full path of the product set.
-      String formattedName =
-          ProductSearchClient.formatProductSetName(projectId, computeRegion, productSetId);
+      String formattedName = ProductSetName.format(projectId, computeRegion, productSetId);
       // Get complete detail of the product set.
       ProductSet productSet = client.getProductSet(formattedName);
       // Display the product set information
@@ -147,8 +149,7 @@ public class ProductSetManagement {
     try (ProductSearchClient client = ProductSearchClient.create()) {
 
       // Get the full path of the product set.
-      String formattedName =
-          ProductSearchClient.formatProductSetName(projectId, computeRegion, productSetId);
+      String formattedName = ProductSetName.format(projectId, computeRegion, productSetId);
       // Delete the product set.
       client.deleteProductSet(formattedName);
       System.out.println(String.format("Product set deleted"));
