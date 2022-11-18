@@ -19,6 +19,7 @@ package com.example.vision;
 import com.google.cloud.vision.v1.Product;
 import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
+import com.google.cloud.vision.v1.ProductSetName;
 import java.io.IOException;
 import java.io.PrintStream;
 import net.sourceforge.argparse4j.ArgumentParsers;
@@ -52,8 +53,7 @@ public class ProductInProductSetManagement {
     try (ProductSearchClient client = ProductSearchClient.create()) {
 
       // Get the full path of the product set.
-      String formattedName =
-          ProductSearchClient.formatProductSetName(projectId, computeRegion, productSetId);
+      String formattedName = ProductSetName.format(projectId, computeRegion, productSetId);
 
       // Get the full path of the product.
       String productPath = ProductName.of(projectId, computeRegion, productId).toString();
@@ -80,8 +80,7 @@ public class ProductInProductSetManagement {
     try (ProductSearchClient client = ProductSearchClient.create()) {
 
       // Get the full path of the product set.
-      String formattedName =
-          ProductSearchClient.formatProductSetName(projectId, computeRegion, productSetId);
+      String formattedName = ProductSetName.format(projectId, computeRegion, productSetId);
       // List all the products available in the product set.
       for (Product product : client.listProductsInProductSet(formattedName).iterateAll()) {
         // Display the product information
@@ -118,12 +117,10 @@ public class ProductInProductSetManagement {
     try (ProductSearchClient client = ProductSearchClient.create()) {
 
       // Get the full path of the product set.
-      String formattedParent =
-          ProductSearchClient.formatProductSetName(projectId, computeRegion, productSetId);
+      String formattedParent = ProductSetName.format(projectId, computeRegion, productSetId);
 
       // Get the full path of the product.
-      String formattedName =
-          ProductSearchClient.formatProductName(projectId, computeRegion, productId);
+      String formattedName = ProductName.format(projectId, computeRegion, productId);
 
       // Remove the product from the product set.
       client.removeProductFromProductSet(formattedParent, formattedName);
