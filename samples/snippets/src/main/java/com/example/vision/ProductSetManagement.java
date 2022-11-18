@@ -18,7 +18,6 @@ package com.example.vision;
 
 import com.google.cloud.vision.v1.CreateProductSetRequest;
 import com.google.cloud.vision.v1.LocationName;
-import com.google.cloud.vision.v1.ProductName;
 import com.google.cloud.vision.v1.ProductSearchClient;
 import com.google.cloud.vision.v1.ProductSet;
 import com.google.cloud.vision.v1.ProductSetName;
